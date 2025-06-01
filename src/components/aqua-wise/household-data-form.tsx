@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import React, { useEffect, useRef, useActionState } from 'react'; // Added useActionState
+import { useFormStatus } from 'react-dom'; // Removed useFormState
 import { getTipsAction, type FormState } from '@/app/actions';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -39,7 +39,7 @@ const initialState: FormState = {
 };
 
 export function HouseholdDataForm() {
-  const [state, formAction] = useFormState(getTipsAction, initialState);
+  const [state, formAction] = useActionState(getTipsAction, initialState); // Changed to useActionState
   const { toast } = useToast();
   const tipsRef = useRef<HTMLDivElement>(null);
 
