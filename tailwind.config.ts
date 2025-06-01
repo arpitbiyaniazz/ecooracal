@@ -8,10 +8,17 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: { // Added container default settings
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Alegreya', 'serif'],
+        headline: ['Belleza', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -93,7 +100,51 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      typography: (theme: any) => ({ // Added typography plugin for prose styles
+        DEFAULT: {
+          css: {
+            color: theme('colors.foreground'),
+            a: {
+              color: theme('colors.primary.DEFAULT'),
+              '&:hover': {
+                color: theme('colors.primary.DEFAULT'),
+                opacity: '0.8',
+              },
+            },
+            'h1, h2, h3, h4': {
+              fontFamily: theme('fontFamily.headline').join(', '),
+              color: theme('colors.foreground'),
+            },
+            p: {
+              fontFamily: theme('fontFamily.body').join(', '),
+            },
+            ul: {
+              fontFamily: theme('fontFamily.body').join(', '),
+            },
+            ol: {
+              fontFamily: theme('fontFamily.body').join(', '),
+            },
+            li: {
+              fontFamily: theme('fontFamily.body').join(', '),
+            },
+             // Dark mode prose
+            '&.dark': {
+              color: theme('colors.foreground'), // Uses dark mode foreground
+              a: {
+                color: theme('colors.primary.DEFAULT'), // Uses dark mode primary
+                 '&:hover': {
+                  color: theme('colors.primary.DEFAULT'),
+                  opacity: '0.8',
+                },
+              },
+              'h1, h2, h3, h4': {
+                 color: theme('colors.foreground'),
+              },
+            }
+          },
+        },
+      }),
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')], // Added @tailwindcss/typography
 } satisfies Config;
