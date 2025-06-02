@@ -1,10 +1,11 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster"; // Added Toaster
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'AquaWise - Smart Water Conservation',
-  description: 'Get AI-powered water saving tips for your household.',
+  title: 'EcoOracle - Smart Eco Living', // Changed title
+  description: 'Get AI-powered tips for water conservation and carbon footprint reduction.', // Changed description
 };
 
 export default function RootLayout({

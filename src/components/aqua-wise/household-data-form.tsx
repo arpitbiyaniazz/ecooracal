@@ -1,8 +1,9 @@
+
 'use client';
 
-import React, { useEffect, useRef, useActionState } from 'react'; // Added useActionState
-import { useFormStatus } from 'react-dom'; // Removed useFormState
-import { getTipsAction, type FormState } from '@/app/actions';
+import React, { useEffect, useRef, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { getWaterTipsAction, type CommonFormState } from '@/app/actions'; // Changed to getWaterTipsAction and CommonFormState
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -22,7 +23,7 @@ function SubmitButton() {
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
-          Getting Tips...
+          Getting Water Tips...
         </>
       ) : (
         <>
@@ -33,13 +34,13 @@ function SubmitButton() {
   );
 }
 
-const initialState: FormState = {
+const initialState: CommonFormState = { // Changed to CommonFormState
   message: '',
   success: false,
 };
 
 export function HouseholdDataForm() {
-  const [state, formAction] = useActionState(getTipsAction, initialState); // Changed to useActionState
+  const [state, formAction] = useActionState(getWaterTipsAction, initialState); // Changed to getWaterTipsAction
   const { toast } = useToast();
   const tipsRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +53,6 @@ export function HouseholdDataForm() {
           variant: "default",
         });
         if (tipsRef.current) {
-          // Wait for the DOM to update before scrolling
           setTimeout(() => {
             tipsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
@@ -72,7 +72,7 @@ export function HouseholdDataForm() {
       <CardHeader>
         <CardTitle className="font-headline text-xl md:text-2xl flex items-center text-foreground">
           <ClipboardEdit className="mr-2 h-6 w-6 text-primary" />
-          Tell Us About Your Household
+          Your Household's Water Use
         </CardTitle>
         <CardDescription className="font-body text-muted-foreground">
           Provide details below to receive personalized water-saving tips from our AI.
@@ -129,7 +129,7 @@ export function HouseholdDataForm() {
         )}
 
         {state.success && state.tips && (
-          <div ref={tipsRef} className="pt-2"> {/* Added pt-2 for spacing before scroll target */}
+          <div ref={tipsRef} className="pt-2"> 
             <Card className="mt-8 bg-primary/10 border-primary/30">
               <CardHeader>
                 <CardTitle className="font-headline text-xl md:text-2xl flex items-center text-primary">
