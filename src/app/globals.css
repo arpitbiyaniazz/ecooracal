@@ -79,7 +79,8 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    background-image: linear-gradient(to bottom right, hsl(260, 45%, 15%), hsl(220, 55%, 20%));
+    @apply text-foreground antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline;
