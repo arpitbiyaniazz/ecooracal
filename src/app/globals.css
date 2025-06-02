@@ -4,73 +4,82 @@
 
 @layer base {
   :root {
-    --background: 230 20% 8%; /* Very dark, slightly desaturated purple/blue */
-    --foreground: 210 30% 92%; /* Off-white, slightly cool */
-    --card: 230 20% 12%; /* Slightly lighter than background */
-    --card-foreground: 210 30% 92%;
-    --popover: 230 20% 10%;
-    --popover-foreground: 210 30% 92%;
-    --primary: 195 100% 50%; /* Bright Cyan/Electric Blue */
-    --primary-foreground: 195 100% 5%; /* Very dark blue for contrast on primary */
-    --secondary: 270 80% 65%; /* Neon Purple */
-    --secondary-foreground: 270 80% 95%; /* Very light purple */
-    --muted: 230 15% 20%; /* Darker grey, matching background hue */
-    --muted-foreground: 220 15% 65%; /* Medium grey */
-    --accent: 330 100% 55%; /* Hot Pink/Magenta */
-    --accent-foreground: 330 100% 96%; /* Almost white for text on accent */
-    --destructive: 0 100% 55%; /* Bright Neon Red */
+    --background: 178 84% 23%; /* Dark Teal (#096B68) */
+    --foreground: 53 100% 94%; /* Light Cream (#FFFBDE) */
+    --card: 178 78% 26%; /* Slightly Lighter Dark Teal */
+    --card-foreground: 53 100% 94%; /* Light Cream */
+    --popover: 178 78% 24%; /* Slightly darker than card */
+    --popover-foreground: 53 100% 94%; /* Light Cream */
+    --primary: 175 80% 34%; /* Medium Teal (#129990) */
+    --primary-foreground: 53 100% 94%; /* Light Cream for text on Primary */
+    --secondary: 172 42% 69%; /* Soft Teal/Mint (#90D1CA) */
+    --secondary-foreground: 178 84% 18%; /* Darkest Teal for text on Secondary */
+    --muted: 178 70% 28%; /* Muted Dark Teal */
+    --muted-foreground: 172 50% 80%; /* Lighter, desaturated Soft Teal/Mint */
+    --accent: 172 42% 69%; /* Soft Teal/Mint (#90D1CA) */
+    --accent-foreground: 178 84% 18%; /* Darkest Teal for text on Accent */
+    --destructive: 0 80% 55%; /* Retaining a distinct destructive color */
     --destructive-foreground: 0 0% 100%; /* White */
-    --border: 210 50% 30%; /* Darker, desaturated cyan/blue for borders */
-    --input: 230 20% 15%; /* Dark input background */
-    --ring: 195 100% 55%; /* Slightly lighter primary for rings */
-    --chart-1: 120 100% 50%; /* Neon Green */
-    --chart-2: 60 100% 50%; /* Neon Yellow */
-    --chart-3: 30 100% 50%; /* Neon Orange */
-    --chart-4: 280 100% 60%; /* Neon Violet */
-    --chart-5: 160 80% 45%; /* Neon Teal */
+    --border: 175 60% 30%; /* Subdued Medium Teal */
+    --input: 178 84% 20%; /* Darker than background for inputs */
+    --ring: 172 50% 75%; /* Brighter Soft Teal/Mint for focus rings */
+
+    /* Chart colors based on the palette */
+    --chart-1: 175 80% 34%;  /* Medium Teal (#129990) */
+    --chart-2: 172 42% 69%;  /* Soft Teal/Mint (#90D1CA) */
+    --chart-3: 175 80% 44%;  /* Lighter Medium Teal */
+    --chart-4: 172 42% 59%;  /* Darker Soft Teal/Mint */
+    --chart-5: 53 100% 88%;  /* Slightly desaturated/darker Light Cream */
     --radius: 0.5rem;
-    --sidebar-background: 230 20% 10%;
-    --sidebar-foreground: 210 30% 90%;
-    --sidebar-primary: 195 100% 50%;
-    --sidebar-primary-foreground: 195 100% 5%;
-    --sidebar-accent: 330 100% 55%;
-    --sidebar-accent-foreground: 330 100% 96%;
-    --sidebar-border: 210 50% 25%;
-    --sidebar-ring: 195 100% 55%;
+
+    /* Sidebar colors to match */
+    --sidebar-background: 178 84% 23%;
+    --sidebar-foreground: 53 100% 94%;
+    --sidebar-primary: 175 80% 34%;
+    --sidebar-primary-foreground: 53 100% 94%;
+    --sidebar-accent: 172 42% 69%;
+    --sidebar-accent-foreground: 178 84% 18%;
+    --sidebar-border: 175 60% 30%;
+    --sidebar-ring: 172 50% 75%;
   }
+
   .dark {
-    --background: 230 20% 8%; /* Very dark, slightly desaturated purple/blue */
-    --foreground: 210 30% 92%; /* Off-white, slightly cool */
-    --card: 230 20% 12%; /* Slightly lighter than background */
-    --card-foreground: 210 30% 92%;
-    --popover: 230 20% 10%;
-    --popover-foreground: 210 30% 92%;
-    --primary: 195 100% 50%; /* Bright Cyan/Electric Blue */
-    --primary-foreground: 195 100% 5%; /* Very dark blue for contrast on primary */
-    --secondary: 270 80% 65%; /* Neon Purple */
-    --secondary-foreground: 270 80% 95%; /* Very light purple */
-    --muted: 230 15% 20%; /* Darker grey, matching background hue */
-    --muted-foreground: 220 15% 65%; /* Medium grey */
-    --accent: 330 100% 55%; /* Hot Pink/Magenta */
-    --accent-foreground: 330 100% 96%; /* Almost white for text on accent */
-    --destructive: 0 100% 55%; /* Bright Neon Red */
+    --background: 178 84% 23%; /* Dark Teal (#096B68) */
+    --foreground: 53 100% 94%; /* Light Cream (#FFFBDE) */
+    --card: 178 78% 26%; /* Slightly Lighter Dark Teal */
+    --card-foreground: 53 100% 94%; /* Light Cream */
+    --popover: 178 78% 24%; /* Slightly darker than card */
+    --popover-foreground: 53 100% 94%; /* Light Cream */
+    --primary: 175 80% 34%; /* Medium Teal (#129990) */
+    --primary-foreground: 53 100% 94%; /* Light Cream for text on Primary */
+    --secondary: 172 42% 69%; /* Soft Teal/Mint (#90D1CA) */
+    --secondary-foreground: 178 84% 18%; /* Darkest Teal for text on Secondary */
+    --muted: 178 70% 28%; /* Muted Dark Teal */
+    --muted-foreground: 172 50% 80%; /* Lighter, desaturated Soft Teal/Mint */
+    --accent: 172 42% 69%; /* Soft Teal/Mint (#90D1CA) */
+    --accent-foreground: 178 84% 18%; /* Darkest Teal for text on Accent */
+    --destructive: 0 80% 55%; /* Retaining a distinct destructive color */
     --destructive-foreground: 0 0% 100%; /* White */
-    --border: 210 50% 30%; /* Darker, desaturated cyan/blue for borders */
-    --input: 230 20% 15%; /* Dark input background */
-    --ring: 195 100% 55%; /* Slightly lighter primary for rings */
-    --chart-1: 120 100% 50%; /* Neon Green */
-    --chart-2: 60 100% 50%; /* Neon Yellow */
-    --chart-3: 30 100% 50%; /* Neon Orange */
-    --chart-4: 280 100% 60%; /* Neon Violet */
-    --chart-5: 160 80% 45%; /* Neon Teal */
-    --sidebar-background: 230 20% 10%;
-    --sidebar-foreground: 210 30% 90%;
-    --sidebar-primary: 195 100% 50%;
-    --sidebar-primary-foreground: 195 100% 5%;
-    --sidebar-accent: 330 100% 55%;
-    --sidebar-accent-foreground: 330 100% 96%;
-    --sidebar-border: 210 50% 25%;
-    --sidebar-ring: 195 100% 55%;
+    --border: 175 60% 30%; /* Subdued Medium Teal */
+    --input: 178 84% 20%; /* Darker than background for inputs */
+    --ring: 172 50% 75%; /* Brighter Soft Teal/Mint for focus rings */
+
+    /* Chart colors based on the palette */
+    --chart-1: 175 80% 34%;  /* Medium Teal (#129990) */
+    --chart-2: 172 42% 69%;  /* Soft Teal/Mint (#90D1CA) */
+    --chart-3: 175 80% 44%;  /* Lighter Medium Teal */
+    --chart-4: 172 42% 59%;  /* Darker Soft Teal/Mint */
+    --chart-5: 53 100% 88%;  /* Slightly desaturated/darker Light Cream */
+
+    /* Sidebar colors to match */
+    --sidebar-background: 178 84% 23%;
+    --sidebar-foreground: 53 100% 94%;
+    --sidebar-primary: 175 80% 34%;
+    --sidebar-primary-foreground: 53 100% 94%;
+    --sidebar-accent: 172 42% 69%;
+    --sidebar-accent-foreground: 178 84% 18%;
+    --sidebar-border: 175 60% 30%;
+    --sidebar-ring: 172 50% 75%;
   }
 }
 
@@ -79,7 +88,8 @@
     @apply border-border;
   }
   body {
-    background-image: linear-gradient(to bottom right, hsl(260, 45%, 15%), hsl(220, 55%, 20%));
+    /* background-image: linear-gradient(to bottom right, hsl(260, 45%, 15%), hsl(220, 55%, 20%)); */
+    background-image: linear-gradient(to bottom right, hsl(178, 84%, 23%), hsl(175, 70%, 28%));
     @apply text-foreground antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
