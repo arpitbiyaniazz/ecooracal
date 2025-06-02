@@ -1,10 +1,11 @@
 
-import { BarChart, Droplet, Zap } from 'lucide-react'; // Added Droplet, Zap
+import { BarChart, Droplet, Zap } from 'lucide-react';
 import AppHeader from '@/components/layout/app-header';
 import AppFooter from '@/components/layout/app-footer';
 import { HouseholdDataForm } from '@/components/aqua-wise/household-data-form';
-import { CarbonDataForm } from '@/components/carbon-couch/carbon-data-form'; // Added CarbonDataForm
-import { Separator } from '@/components/ui/separator'; // Added Separator
+import { CarbonDataForm } from '@/components/carbon-couch/carbon-data-form';
+import { Separator } from '@/components/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   return (
@@ -17,32 +18,44 @@ export default function Home() {
           </h2>
           <p className="text-lg md:text-xl font-body text-foreground/80 max-w-3xl mx-auto">
             EcoOracle provides personalized, AI-powered recommendations to help you reduce your household's environmental impact.
-            Explore tips for water conservation and carbon footprint reduction below.
+            Select a category below to get started.
           </p>
         </section>
 
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-16 md:mb-24">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-headline text-primary mb-3 flex items-center">
-              <Droplet className="mr-3 h-7 w-7" />
-              Water Conservation Center
-            </h3>
-            <p className="text-muted-foreground font-body mb-6">
-              Enter your household's water usage details to get smart tips tailored just for you.
-            </p>
-            <HouseholdDataForm />
-          </div>
-          <div>
-            <h3 className="text-2xl md:text-3xl font-headline text-accent-foreground mb-3 flex items-center">
-              <Zap className="mr-3 h-7 w-7" /> {/* Or Footprints, Cloud */}
-              Carbon Footprint Coach
-            </h3>
-            <p className="text-muted-foreground font-body mb-6">
-              Describe your lifestyle to understand and reduce your carbon emissions.
-            </p>
-            <CarbonDataForm />
-          </div>
-        </div>
+        <Tabs defaultValue="water" className="w-full max-w-4xl mx-auto mb-16 md:mb-24">
+          <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsTrigger value="water" className="py-3 text-base md:text-lg font-headline">
+              <Droplet className="mr-2 h-5 w-5" /> Water Conservation
+            </TabsTrigger>
+            <TabsTrigger value="carbon" className="py-3 text-base md:text-lg font-headline">
+              <Zap className="mr-2 h-5 w-5" /> Carbon Footprint
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="water">
+            <div className="p-1"> {/* Added padding for content within tab */}
+              <h3 className="text-2xl md:text-3xl font-headline text-primary mb-3 flex items-center">
+                <Droplet className="mr-3 h-7 w-7" />
+                Water Conservation Center
+              </h3>
+              <p className="text-muted-foreground font-body mb-6">
+                Enter your household's water usage details to get smart tips tailored just for you.
+              </p>
+              <HouseholdDataForm />
+            </div>
+          </TabsContent>
+          <TabsContent value="carbon">
+            <div className="p-1"> {/* Added padding for content within tab */}
+              <h3 className="text-2xl md:text-3xl font-headline text-accent-foreground mb-3 flex items-center">
+                <Zap className="mr-3 h-7 w-7" />
+                Carbon Footprint Coach
+              </h3>
+              <p className="text-muted-foreground font-body mb-6">
+                Describe your lifestyle to understand and reduce your carbon emissions.
+              </p>
+              <CarbonDataForm />
+            </div>
+          </TabsContent>
+        </Tabs>
         
         <Separator className="my-12 md:my-16" />
 
