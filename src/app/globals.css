@@ -5,82 +5,82 @@
 
 @layer base {
   :root {
-    --background: 53 100% 94%; /* Light Cream (#FFFBDE) */
-    --foreground: 178 84% 23%; /* Dark Teal (#096B68) for text */
-    --card: 53 100% 98%; /* Even Lighter Cream / Off-white */
-    --card-foreground: 178 84% 23%; /* Dark Teal */
-    --popover: 53 100% 98%; /* Even Lighter Cream / Off-white */
-    --popover-foreground: 178 84% 23%; /* Dark Teal */
-    --primary: 175 80% 34%; /* Medium Teal (#129990) for logo, buttons */
-    --primary-foreground: 53 100% 96%; /* Light Cream for text on Primary */
-    --secondary: 172 42% 69%; /* Soft Teal/Mint (#90D1CA) */
-    --secondary-foreground: 178 84% 23%; /* Dark Teal for text on Secondary */
-    --muted: 172 50% 85%; /* Very Light Desaturated Soft Teal/Mint */
-    --muted-foreground: 178 70% 40%; /* Medium-Dark Teal for muted text */
-    --accent: 172 42% 69%; /* Soft Teal/Mint (#90D1CA) */
-    --accent-foreground: 178 84% 23%; /* Dark Teal for text on Accent */
-    --destructive: 0 80% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 172 40% 80%; /* Light Soft Teal/Mint for borders */
-    --input: 53 100% 98%; /* Use card color for input background */
-    --ring: 175 80% 40%; /* Medium Teal for focus rings */
+    --background: 208 100% 97%; /* #F0F8FF (Very light blue) */
+    --foreground: 210 30% 30%; /* #3D4C5C (Dark Desaturated Blue for text) */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 30% 30%; /* Dark Desaturated Blue */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 210 30% 30%; /* Dark Desaturated Blue */
+    --primary: 207 77% 70%; /* #78B9EB (Soft blue) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 145 44% 80%; /* #B3E0C7 (Lighter Accent Green) */
+    --secondary-foreground: 145 50% 25%; /* #2F6546 (Dark Green for text on secondary) */
+    --muted: 208 100% 94%; /* #E1F5FE (Lighter than background) */
+    --muted-foreground: 210 25% 55%; /* #7C8A99 (Softer blue-gray) */
+    --accent: 145 44% 73%; /* #A0D6B4 (Light green) */
+    --accent-foreground: 145 50% 25%; /* #2F6546 (Dark Green for text on accent) */
+    --destructive: 0 72% 51%; /* Vivid Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 207 60% 85%; /* #C0DFF2 (Lighter, softer blue for borders) */
+    --input: 0 0% 100%; /* White */
+    --ring: 207 90% 75%; /* Brighter primary for focus rings */
 
-    /* Chart colors based on the light palette */
-    --chart-1: 175 80% 34%;  /* Medium Teal */
-    --chart-2: 172 42% 69%;  /* Soft Teal/Mint */
-    --chart-3: 175 80% 44%;  /* Lighter Medium Teal */
-    --chart-4: 172 42% 59%;  /* Darker Soft Teal/Mint */
-    --chart-5: 178 84% 23%;  /* Dark Teal */
+    /* Chart colors */
+    --chart-1: 207 77% 70%;  /* Primary Blue */
+    --chart-2: 145 44% 73%;  /* Accent Green */
+    --chart-3: 207 77% 60%;  /* Darker Primary Blue */
+    --chart-4: 145 44% 63%;  /* Darker Accent Green */
+    --chart-5: 210 30% 40%;  /* Medium Desaturated Blue */
     --radius: 0.5rem;
 
-    /* Sidebar colors - Dark sidebar for contrast with light page */
-    --sidebar-background: 178 84% 23%; /* Dark Teal */
-    --sidebar-foreground: 53 100% 94%; /* Light Cream */
-    --sidebar-primary: 172 42% 69%; /* Soft Teal/Mint (as primary in sidebar) */
-    --sidebar-primary-foreground: 178 84% 23%; /* Dark Teal (text on sidebar primary) */
-    --sidebar-accent: 175 80% 34%; /* Medium Teal (as accent in sidebar) */
-    --sidebar-accent-foreground: 53 100% 94%; /* Light Cream */
-    --sidebar-border: 175 70% 30%;
-    --sidebar-ring: 172 42% 75%;
+    /* Sidebar colors */
+    --sidebar-background: 207 77% 70%; /* Primary Blue */
+    --sidebar-foreground: 0 0% 100%; /* White */
+    --sidebar-primary: 145 44% 73%; /* Light Green */
+    --sidebar-primary-foreground: 145 50% 25%; /* Dark Green */
+    --sidebar-accent: 207 77% 80%; /* Lighter Primary Blue */
+    --sidebar-accent-foreground: 210 30% 20%; /* Darker Blue */
+    --sidebar-border: 207 77% 60%; /* Darker Primary Blue */
+    --sidebar-ring: 0 0% 100%; /* White */
   }
 
   .dark {
-    --background: 178 84% 23%; /* Dark Teal (#096B68) */
-    --foreground: 53 100% 94%; /* Light Cream (#FFFBDE) */
-    --card: 178 78% 26%; /* Slightly Lighter Dark Teal */
-    --card-foreground: 53 100% 94%; /* Light Cream */
-    --popover: 178 78% 24%; /* Slightly darker than card */
-    --popover-foreground: 53 100% 94%; /* Light Cream */
-    --primary: 172 42% 69%; /* Soft Teal/Mint (#90D1CA) for good contrast in dark mode */
-    --primary-foreground: 178 84% 18%; /* Darkest Teal for text on Primary */
-    --secondary: 175 80% 34%; /* Medium Teal (#129990) */
-    --secondary-foreground: 53 100% 94%; /* Light Cream for text on Secondary */
-    --muted: 178 70% 28%; /* Muted Dark Teal */
-    --muted-foreground: 172 50% 80%; /* Lighter, desaturated Soft Teal/Mint */
-    --accent: 175 80% 34%; /* Medium Teal (#129990) */
-    --accent-foreground: 53 100% 94%; /* Light Cream for text on Accent */
-    --destructive: 0 80% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 175 60% 30%; /* Subdued Medium Teal */
-    --input: 178 84% 20%; /* Darker than background for inputs */
-    --ring: 172 50% 75%; /* Brighter Soft Teal/Mint for focus rings */
+    --background: 210 30% 15%; /* #1A222D (Very Dark Blue) */
+    --foreground: 208 100% 90%; /* #D6EEFE (Light Blue, almost white) */
+    --card: 210 30% 20%; /* #242F3D (Darker card) */
+    --card-foreground: 208 100% 90%; /* Light Blue */
+    --popover: 210 30% 18%; /* #1F2937 (Slightly darker popover) */
+    --popover-foreground: 208 100% 90%; /* Light Blue */
+    --primary: 207 77% 70%; /* #78B9EB (Soft blue - pops on dark) */
+    --primary-foreground: 210 30% 10%; /* #0F172A (Very dark for text on primary) */
+    --secondary: 145 44% 73%; /* #A0D6B4 (Light green - pops on dark) */
+    --secondary-foreground: 145 50% 15%; /* #1D4231 (Very dark green) */
+    --muted: 210 30% 25%; /* #303E50 (Muted dark blue) */
+    --muted-foreground: 208 50% 70%; /* #8CBADC (Lighter muted text) */
+    --accent: 145 44% 73%; /* #A0D6B4 (Light green) */
+    --accent-foreground: 145 50% 15%; /* #1D4231 (Very dark green) */
+    --destructive: 0 65% 55%; /* #DB4646 (Vivid Red) */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 210 30% 30%; /* #3D4C5C (Muted border) */
+    --input: 210 30% 22%; /* #293543 (Dark input) */
+    --ring: 207 90% 75%; /* #9CD1F6 (Brighter primary for focus rings) */
 
     /* Chart colors for dark theme */
-    --chart-1: 172 42% 69%;  /* Soft Teal/Mint */
-    --chart-2: 175 80% 34%;  /* Medium Teal */
-    --chart-3: 172 42% 59%;  /* Darker Soft Teal/Mint */
-    --chart-4: 175 80% 44%;  /* Lighter Medium Teal */
-    --chart-5: 53 100% 88%;  /* Slightly desaturated/darker Light Cream */
+    --chart-1: 207 77% 70%;  /* Soft Blue */
+    --chart-2: 145 44% 73%;  /* Light Green */
+    --chart-3: 207 77% 80%;  /* Lighter Soft Blue */
+    --chart-4: 145 44% 83%;  /* Lighter Light Green */
+    --chart-5: 208 100% 90%; /* Light Blue text */
 
-    /* Sidebar colors to match dark theme */
-    --sidebar-background: 178 84% 23%; /* Dark Teal */
-    --sidebar-foreground: 53 100% 94%; /* Light Cream */
-    --sidebar-primary: 172 42% 69%; /* Soft Teal/Mint */
-    --sidebar-primary-foreground: 178 84% 18%; /* Darkest Teal */
-    --sidebar-accent: 175 80% 34%; /* Medium Teal */
-    --sidebar-accent-foreground: 53 100% 94%; /* Light Cream */
-    --sidebar-border: 175 60% 30%;
-    --sidebar-ring: 172 50% 75%;
+    /* Sidebar colors for dark theme */
+    --sidebar-background: 210 30% 12%; /* #141B25 (Even Darker Blue for Sidebar) */
+    --sidebar-foreground: 208 100% 90%; /* Light Blue */
+    --sidebar-primary: 207 77% 70%; /* Soft Blue */
+    --sidebar-primary-foreground: 210 30% 10%; /* Very Dark Blue */
+    --sidebar-accent: 145 44% 73%; /* Light Green */
+    --sidebar-accent-foreground: 145 50% 15%; /* Very Dark Green */
+    --sidebar-border: 210 30% 25%; /* Muted Dark Blue */
+    --sidebar-ring: 207 90% 75%; /* Brighter Primary Blue */
   }
 }
 
