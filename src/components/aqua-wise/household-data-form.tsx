@@ -16,7 +16,7 @@ import { useToast } from "@/hooks/use-toast";
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" className="w-full font-body" disabled={pending} aria-live="polite">
+    <Button type="submit" className="w-full font-body text-base" disabled={pending} aria-live="polite">
       {pending ? (
         <>
           <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-primary-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -70,11 +70,11 @@ export function HouseholdDataForm() {
   return (
     <Card className="shadow-lg border-border/80">
       <CardHeader>
-        <CardTitle className="font-headline text-xl md:text-2xl flex items-center text-foreground">
+        <CardTitle className="font-headline text-2xl md:text-3xl flex items-center text-foreground">
           <ClipboardEdit className="mr-2 h-6 w-6 text-primary" />
           Your Household's Water Use
         </CardTitle>
-        <CardDescription className="font-body text-muted-foreground">
+        <CardDescription className="font-body text-base text-muted-foreground">
           Provide details below to receive personalized water-saving tips from our AI.
         </CardDescription>
       </CardHeader>
@@ -85,7 +85,7 @@ export function HouseholdDataForm() {
               <Users className="mr-2 h-4 w-4 text-primary" />Number of Residents
             </Label>
             <Input id="numResidents" name="numResidents" type="number" placeholder="e.g., 4" required className="font-body" aria-describedby="numResidentsError" />
-            {state.errors?.numResidents && <p id="numResidentsError" className="text-sm text-destructive mt-1 font-body">{state.errors.numResidents.join(', ')}</p>}
+            {state.errors?.numResidents && <p id="numResidentsError" className="text-base text-destructive mt-1 font-body">{state.errors.numResidents.join(', ')}</p>}
           </div>
           <div>
             <Label htmlFor="waterBillHistory" className="font-body flex items-center mb-1 text-foreground/90">
@@ -96,10 +96,10 @@ export function HouseholdDataForm() {
               name="waterBillHistory"
               placeholder="e.g., Average monthly bill is $50, usage is 3000 gallons. Higher consumption in summer due to garden watering."
               required
-              className="font-body min-h-[100px]"
+              className="font-body"
               aria-describedby="waterBillHistoryError"
             />
-            {state.errors?.waterBillHistory && <p id="waterBillHistoryError" className="text-sm text-destructive mt-1 font-body">{state.errors.waterBillHistory.join(', ')}</p>}
+            {state.errors?.waterBillHistory && <p id="waterBillHistoryError" className="text-base text-destructive mt-1 font-body">{state.errors.waterBillHistory.join(', ')}</p>}
           </div>
           <div>
             <Label htmlFor="habits" className="font-body flex items-center mb-1 text-foreground/90">
@@ -110,10 +110,10 @@ export function HouseholdDataForm() {
               name="habits"
               placeholder="e.g., Daily showers for all residents, run dishwasher 3 times/week, water lawn twice a week for 30 mins."
               required
-              className="font-body min-h-[100px]"
+              className="font-body"
               aria-describedby="habitsError"
             />
-            {state.errors?.habits && <p id="habitsError" className="text-sm text-destructive mt-1 font-body">{state.errors.habits.join(', ')}</p>}
+            {state.errors?.habits && <p id="habitsError" className="text-base text-destructive mt-1 font-body">{state.errors.habits.join(', ')}</p>}
           </div>
           <SubmitButton />
         </form>
@@ -121,8 +121,8 @@ export function HouseholdDataForm() {
         {state.errors?._form && (
           <Alert variant="destructive" className="mt-6">
             <AlertCircle className="h-4 w-4" />
-            <AlertTitle className="font-headline">Form Error</AlertTitle>
-            <AlertDescription className="font-body">
+            <AlertTitle className="font-headline text-base">Form Error</AlertTitle>
+            <AlertDescription className="font-body text-base">
               {state.errors._form.join(' ')}
             </AlertDescription>
           </Alert>
@@ -132,12 +132,12 @@ export function HouseholdDataForm() {
           <div ref={tipsRef} className="pt-2"> 
             <Card className="mt-8 bg-primary/10 border-primary/30">
               <CardHeader>
-                <CardTitle className="font-headline text-xl md:text-2xl flex items-center text-primary">
+                <CardTitle className="font-headline text-2xl md:text-3xl flex items-center text-primary">
                   <Sparkles className="mr-2 h-6 w-6" />Your Personalized Water Saving Tips!
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="font-body prose dark:prose-invert prose-sm sm:prose-base max-w-none whitespace-pre-wrap text-foreground/90 prose-headings:text-primary prose-strong:text-foreground">
+                <div className="font-body prose dark:prose-invert prose-base sm:prose-lg max-w-none whitespace-pre-wrap text-foreground/90 prose-headings:text-primary prose-strong:text-foreground">
                   {state.tips}
                 </div>
               </CardContent>

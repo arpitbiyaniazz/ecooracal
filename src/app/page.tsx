@@ -13,10 +13,10 @@ export default function Home() {
       <AppHeader />
       <main className="container mx-auto px-4 py-8 flex-grow">
         <section className="text-center mb-10 md:mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-headline text-primary mb-4 leading-tight">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-headline text-primary mb-4 leading-tight">
             Live Smarter, Greener, Better
           </h2>
-          <p className="text-lg md:text-xl font-body text-foreground/80 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl font-body text-foreground/80 max-w-3xl mx-auto">
             EcoOracle provides personalized, AI-powered recommendations to help you reduce your household's environmental impact.
             Select a category below to get started.
           </p>
@@ -24,20 +24,20 @@ export default function Home() {
 
         <Tabs defaultValue="water" className="w-full max-w-4xl mx-auto mb-16 md:mb-24">
           <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="water" className="py-3 text-base md:text-lg font-headline">
+            <TabsTrigger value="water" className="py-3 text-lg md:text-xl font-headline">
               <Droplet className="mr-2 h-5 w-5" /> Water Conservation
             </TabsTrigger>
-            <TabsTrigger value="carbon" className="py-3 text-base md:text-lg font-headline">
+            <TabsTrigger value="carbon" className="py-3 text-lg md:text-xl font-headline">
               <Zap className="mr-2 h-5 w-5" /> Carbon Footprint
             </TabsTrigger>
           </TabsList>
           <TabsContent value="water">
             <div className="p-1"> {/* Added padding for content within tab */}
-              <h3 className="text-2xl md:text-3xl font-headline text-primary mb-3 flex items-center">
+              <h3 className="text-3xl md:text-4xl font-headline text-primary mb-3 flex items-center">
                 <Droplet className="mr-3 h-7 w-7" />
                 Water Conservation Center
               </h3>
-              <p className="text-muted-foreground font-body mb-6">
+              <p className="text-base text-muted-foreground font-body mb-6">
                 Enter your household's water usage details to get smart tips tailored just for you.
               </p>
               <HouseholdDataForm />
@@ -45,11 +45,11 @@ export default function Home() {
           </TabsContent>
           <TabsContent value="carbon">
             <div className="p-1"> {/* Added padding for content within tab */}
-              <h3 className="text-2xl md:text-3xl font-headline text-accent-foreground mb-3 flex items-center">
+              <h3 className="text-3xl md:text-4xl font-headline text-accent-foreground mb-3 flex items-center">
                 <Zap className="mr-3 h-7 w-7" />
                 Carbon Footprint Coach
               </h3>
-              <p className="text-muted-foreground font-body mb-6">
+              <p className="text-base text-muted-foreground font-body mb-6">
                 Describe your lifestyle to understand and reduce your carbon emissions.
               </p>
               <CarbonDataForm />
@@ -60,10 +60,10 @@ export default function Home() {
         <Separator className="my-12 md:my-16" />
 
         <section id="progress-tracking" className="p-6 md:p-8 bg-card rounded-lg shadow-lg border-border/80">
-           <h3 className="text-2xl md:text-3xl font-headline text-foreground mb-4 text-center">
+           <h3 className="text-3xl md:text-4xl font-headline text-foreground mb-4 text-center">
              Future: Track Your Eco-Progress & Goals
            </h3>
-           <p className="text-muted-foreground font-body text-center max-w-xl mx-auto">
+           <p className="text-base text-muted-foreground font-body text-center max-w-xl mx-auto">
               Soon, you'll be able to set reduction goals for both water and carbon, and visualize your progress with insightful charts. EcoOracle is committed to helping you make a lasting impact. Stay tuned!
            </p>
            <div className="mt-6 flex justify-center">

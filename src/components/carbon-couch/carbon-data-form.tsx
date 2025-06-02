@@ -16,7 +16,7 @@ import { useToast } from "@/hooks/use-toast";
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" className="w-full font-body" disabled={pending} aria-live="polite">
+    <Button type="submit" className="w-full font-body text-base" disabled={pending} aria-live="polite">
       {pending ? (
         <>
           <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-primary-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -70,11 +70,11 @@ export function CarbonDataForm() {
   return (
     <Card className="shadow-lg border-border/80">
       <CardHeader>
-        <CardTitle className="font-headline text-xl md:text-2xl flex items-center text-foreground">
+        <CardTitle className="font-headline text-2xl md:text-3xl flex items-center text-foreground">
           <CloudCog className="mr-2 h-6 w-6 text-primary" />
           Your Household's Carbon Footprint
         </CardTitle>
-        <CardDescription className="font-body text-muted-foreground">
+        <CardDescription className="font-body text-base text-muted-foreground">
           Provide details below to receive personalized carbon-saving tips from our AI.
         </CardDescription>
       </CardHeader>
@@ -85,7 +85,7 @@ export function CarbonDataForm() {
               <Users className="mr-2 h-4 w-4 text-primary" />Number of Residents
             </Label>
             <Input id="numResidentsCarbon" name="numResidentsCarbon" type="number" placeholder="e.g., 2" required className="font-body" aria-describedby="numResidentsCarbonError" />
-            {state.errors?.numResidentsCarbon && <p id="numResidentsCarbonError" className="text-sm text-destructive mt-1 font-body">{state.errors.numResidentsCarbon.join(', ')}</p>}
+            {state.errors?.numResidentsCarbon && <p id="numResidentsCarbonError" className="text-base text-destructive mt-1 font-body">{state.errors.numResidentsCarbon.join(', ')}</p>}
           </div>
           <div>
             <Label htmlFor="electricityUsage" className="font-body flex items-center mb-1 text-foreground/90">
@@ -96,10 +96,10 @@ export function CarbonDataForm() {
               name="electricityUsage"
               placeholder="e.g., Average 500 kWh/month, use LED bulbs, run AC in summer."
               required
-              className="font-body min-h-[100px]"
+              className="font-body"
               aria-describedby="electricityUsageError"
             />
-            {state.errors?.electricityUsage && <p id="electricityUsageError" className="text-sm text-destructive mt-1 font-body">{state.errors.electricityUsage.join(', ')}</p>}
+            {state.errors?.electricityUsage && <p id="electricityUsageError" className="text-base text-destructive mt-1 font-body">{state.errors.electricityUsage.join(', ')}</p>}
           </div>
           <div>
             <Label htmlFor="transportationHabits" className="font-body flex items-center mb-1 text-foreground/90">
@@ -110,10 +110,10 @@ export function CarbonDataForm() {
               name="transportationHabits"
               placeholder="e.g., Drive a sedan 100 miles/week, use public transport for commute."
               required
-              className="font-body min-h-[100px]"
+              className="font-body"
               aria-describedby="transportationHabitsError"
             />
-            {state.errors?.transportationHabits && <p id="transportationHabitsError" className="text-sm text-destructive mt-1 font-body">{state.errors.transportationHabits.join(', ')}</p>}
+            {state.errors?.transportationHabits && <p id="transportationHabitsError" className="text-base text-destructive mt-1 font-body">{state.errors.transportationHabits.join(', ')}</p>}
           </div>
           <div>
             <Label htmlFor="dietaryPreferences" className="font-body flex items-center mb-1 text-foreground/90">
@@ -124,10 +124,10 @@ export function CarbonDataForm() {
               name="dietaryPreferences"
               placeholder="e.g., Eat meat 3 times a week, try to buy local produce."
               required
-              className="font-body min-h-[100px]"
+              className="font-body"
               aria-describedby="dietaryPreferencesError"
             />
-            {state.errors?.dietaryPreferences && <p id="dietaryPreferencesError" className="text-sm text-destructive mt-1 font-body">{state.errors.dietaryPreferences.join(', ')}</p>}
+            {state.errors?.dietaryPreferences && <p id="dietaryPreferencesError" className="text-base text-destructive mt-1 font-body">{state.errors.dietaryPreferences.join(', ')}</p>}
           </div>
            <div>
             <Label htmlFor="flyingHabits" className="font-body flex items-center mb-1 text-foreground/90">
@@ -138,10 +138,10 @@ export function CarbonDataForm() {
               name="flyingHabits"
               placeholder="e.g., 1 international round-trip flight per year, a few domestic short flights."
               required
-              className="font-body min-h-[100px]"
+              className="font-body"
               aria-describedby="flyingHabitsError"
             />
-            {state.errors?.flyingHabits && <p id="flyingHabitsError" className="text-sm text-destructive mt-1 font-body">{state.errors.flyingHabits.join(', ')}</p>}
+            {state.errors?.flyingHabits && <p id="flyingHabitsError" className="text-base text-destructive mt-1 font-body">{state.errors.flyingHabits.join(', ')}</p>}
           </div>
           <SubmitButton />
         </form>
@@ -149,8 +149,8 @@ export function CarbonDataForm() {
         {state.errors?._form && (
           <Alert variant="destructive" className="mt-6">
             <AlertCircle className="h-4 w-4" />
-            <AlertTitle className="font-headline">Form Error</AlertTitle>
-            <AlertDescription className="font-body">
+            <AlertTitle className="font-headline text-base">Form Error</AlertTitle>
+            <AlertDescription className="font-body text-base">
               {state.errors._form.join(' ')}
             </AlertDescription>
           </Alert>
@@ -160,12 +160,12 @@ export function CarbonDataForm() {
           <div ref={tipsRef} className="pt-2">
             <Card className="mt-8 bg-accent/10 border-accent/30">
               <CardHeader>
-                <CardTitle className="font-headline text-xl md:text-2xl flex items-center text-accent-foreground">
+                <CardTitle className="font-headline text-2xl md:text-3xl flex items-center text-accent-foreground">
                   <Sparkles className="mr-2 h-6 w-6" />Your Personalized Carbon Saving Tips!
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="font-body prose dark:prose-invert prose-sm sm:prose-base max-w-none whitespace-pre-wrap text-foreground/90 prose-headings:text-accent-foreground prose-strong:text-foreground">
+                <div className="font-body prose dark:prose-invert prose-base sm:prose-lg max-w-none whitespace-pre-wrap text-foreground/90 prose-headings:text-accent-foreground prose-strong:text-foreground">
                   {state.tips}
                 </div>
               </CardContent>

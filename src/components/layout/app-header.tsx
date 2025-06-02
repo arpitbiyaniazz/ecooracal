@@ -8,7 +8,7 @@ const AppHeader = () => {
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <Leaf className="h-7 w-7 md:h-8 md:w-8 text-primary group-hover:animate-pulse" /> {/* Changed icon */}
-          <h1 className="text-2xl md:text-3xl font-headline text-primary group-hover:text-primary/90 transition-colors">
+          <h1 className="text-3xl md:text-4xl font-headline text-primary group-hover:text-primary/90 transition-colors">
             EcoOracle
           </h1> {/* Changed name */}
         </Link>
