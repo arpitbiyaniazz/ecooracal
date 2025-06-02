@@ -1,15 +1,16 @@
 
-import { BarChart, Droplet, Zap } from 'lucide-react';
+import { BarChart, Droplet, Zap, Bolt } from 'lucide-react'; // Added Bolt
 import AppHeader from '@/components/layout/app-header';
 import AppFooter from '@/components/layout/app-footer';
 import { HouseholdDataForm } from '@/components/aqua-wise/household-data-form';
 import { CarbonDataForm } from '@/components/carbon-couch/carbon-data-form';
+import { ElectricityDataForm } from '@/components/electricity-coach/electricity-data-form'; // Added ElectricityDataForm
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen"> {/* Removed bg-background */}
+    <div className="flex flex-col min-h-screen">
       <AppHeader />
       <main className="container mx-auto px-4 py-8 flex-grow">
         <section className="text-center mb-10 md:mb-16">
@@ -23,16 +24,19 @@ export default function Home() {
         </section>
 
         <Tabs defaultValue="water" className="w-full max-w-4xl mx-auto mb-16 md:mb-24">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
+          <TabsList className="grid w-full grid-cols-3 mb-8"> {/* Changed grid-cols-2 to grid-cols-3 */}
             <TabsTrigger value="water" className="py-3 text-lg md:text-xl font-headline">
               <Droplet className="mr-2 h-5 w-5" /> Water Conservation
             </TabsTrigger>
             <TabsTrigger value="carbon" className="py-3 text-lg md:text-xl font-headline">
               <Zap className="mr-2 h-5 w-5" /> Carbon Footprint
             </TabsTrigger>
+            <TabsTrigger value="electricity" className="py-3 text-lg md:text-xl font-headline"> {/* Added Electricity Tab Trigger */}
+              <Bolt className="mr-2 h-5 w-5" /> Electricity Saving
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="water">
-            <div className="p-1"> {/* Added padding for content within tab */}
+            <div className="p-1">
               <h3 className="text-3xl md:text-4xl font-headline text-primary mb-3 flex items-center">
                 <Droplet className="mr-3 h-7 w-7" />
                 Water Conservation Center
@@ -44,7 +48,7 @@ export default function Home() {
             </div>
           </TabsContent>
           <TabsContent value="carbon">
-            <div className="p-1"> {/* Added padding for content within tab */}
+            <div className="p-1">
               <h3 className="text-3xl md:text-4xl font-headline text-accent-foreground mb-3 flex items-center">
                 <Zap className="mr-3 h-7 w-7" />
                 Carbon Footprint Coach
@@ -53,6 +57,18 @@ export default function Home() {
                 Describe your lifestyle to understand and reduce your carbon emissions.
               </p>
               <CarbonDataForm />
+            </div>
+          </TabsContent>
+          <TabsContent value="electricity"> {/* Added Electricity Tab Content */}
+            <div className="p-1">
+              <h3 className="text-3xl md:text-4xl font-headline text-primary mb-3 flex items-center">
+                <Bolt className="mr-3 h-7 w-7" />
+                Electricity Consumption Coach
+              </h3>
+              <p className="text-base text-muted-foreground font-body mb-6">
+                Detail your electricity use to receive AI-powered saving strategies.
+              </p>
+              <ElectricityDataForm />
             </div>
           </TabsContent>
         </Tabs>
@@ -64,7 +80,7 @@ export default function Home() {
              Future: Track Your Eco-Progress & Goals
            </h3>
            <p className="text-base text-muted-foreground font-body text-center max-w-xl mx-auto">
-              Soon, you'll be able to set reduction goals for both water and carbon, and visualize your progress with insightful charts. EcoOracle is committed to helping you make a lasting impact. Stay tuned!
+              Soon, you'll be able to set reduction goals for water, carbon, and electricity, and visualize your progress with insightful charts. EcoOracle is committed to helping you make a lasting impact. Stay tuned!
            </p>
            <div className="mt-6 flex justify-center">
               <BarChart className="w-10 h-10 md:w-12 md:h-12 text-primary opacity-60" />

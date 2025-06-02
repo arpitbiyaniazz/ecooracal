@@ -3,6 +3,7 @@
 
 import { generateWaterSavingTips, type WaterSavingTipsInput, type WaterSavingTipsOutput } from '@/ai/flows/generate-water-saving-tips';
 import { generateCarbonFootprintTips, type CarbonFootprintTipsInput, type CarbonFootprintTipsOutput } from '@/ai/flows/generate-carbon-footprint-tips';
+import { generateElectricitySavingTips, type ElectricitySavingTipsInput, type ElectricitySavingTipsOutput } from '@/ai/flows/generate-electricity-saving-tips';
 import { z } from 'zod';
 
 const WaterFormSchema = z.object({
@@ -16,8 +17,8 @@ export interface CommonFormState {
   tips?: string;
   success?: boolean;
   errors?: {
-    [key: string]: string[] | undefined; // Generalize errors to accept any field
-    _form?: string[]; 
+    [key: string]: string[] | undefined; 
+    _form?: string[];
   };
 }
 
@@ -90,7 +91,6 @@ export async function getCarbonTipsAction(prevState: CommonFormState, formData: 
   }
 
   try {
-    // Map numResidentsCarbon to numResidents for the AI flow
     const input: CarbonFootprintTipsInput = {
         numResidents: validatedFields.data.numResidentsCarbon,
         electricityUsage: validatedFields.data.electricityUsage,
@@ -120,6 +120,65 @@ export async function getCarbonTipsAction(prevState: CommonFormState, formData: 
         message: `Failed to generate carbon footprint tips: ${errorMessage}. Please try again later.`,
         success: false,
         errors: { _form: ["AI service error for carbon tips.", errorMessage] }
+    };
+  }
+}
+
+const ElectricityFormSchema = z.object({
+  numResidentsElectricity: z.coerce.number().min(1, "Number of residents must be at least 1.").max(100, "Number of residents seems too high."),
+  applianceDetails: z.string().min(10, "Please describe appliance details (at least 10 characters).").max(2000, "Description too long (max 2000 chars)."),
+  heatingCoolingSystem: z.string().min(10, "Please describe heating/cooling system (at least 10 characters).").max(2000, "Description too long (max 2000 chars)."),
+  lightingHabits: z.string().min(10, "Please describe lighting habits (at least 10 characters).").max(2000, "Description too long (max 2000 chars)."),
+  renewableEnergySources: z.string().max(2000, "Description too long (max 2000 chars).").optional(),
+});
+
+export async function getElectricityTipsAction(prevState: CommonFormState, formData: FormData): Promise<CommonFormState> {
+  const validatedFields = ElectricityFormSchema.safeParse({
+    numResidentsElectricity: formData.get('numResidentsElectricity'),
+    applianceDetails: formData.get('applianceDetails'),
+    heatingCoolingSystem: formData.get('heatingCoolingSystem'),
+    lightingHabits: formData.get('lightingHabits'),
+    renewableEnergySources: formData.get('renewableEnergySources'),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      message: "Validation failed. Please check your inputs for electricity saving tips.",
+      success: false,
+      errors: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+
+  try {
+    const input: ElectricitySavingTipsInput = {
+        numResidents: validatedFields.data.numResidentsElectricity,
+        applianceDetails: validatedFields.data.applianceDetails,
+        heatingCoolingSystem: validatedFields.data.heatingCoolingSystem,
+        lightingHabits: validatedFields.data.lightingHabits,
+        renewableEnergySources: validatedFields.data.renewableEnergySources || undefined,
+    };
+    const result: ElectricitySavingTipsOutput = await generateElectricitySavingTips(input);
+    
+    if (!result.tips || result.tips.trim() === "") {
+        return { 
+            message: "AI service returned empty electricity saving tips. Please try adjusting your input or try again later.",
+            success: false,
+            errors: { _form: ["AI returned no electricity tips."] }
+        };
+    }
+
+    return { 
+        message: "Successfully generated electricity saving tips!", 
+        tips: result.tips,
+        success: true,
+    };
+  } catch (error) {
+    console.error("Error generating electricity tips:", error);
+    const errorMessage = (error instanceof Error) ? error.message : "An unknown error occurred.";
+    return { 
+        message: `Failed to generate electricity saving tips: ${errorMessage}. Please try again later.`,
+        success: false,
+        errors: { _form: ["AI service error for electricity tips.", errorMessage] }
     };
   }
 }
