@@ -27,19 +27,19 @@ export default function Home() {
           <TabsList className="grid w-full grid-cols-3 mb-8 bg-card p-1.5 rounded-lg shadow-lg">
             <TabsTrigger
               value="water"
-              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10"
+              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10 data-[state=inactive]:shadow-sm"
             >
               <Droplet className="mr-2 h-5 w-5" /> Water Conservation
             </TabsTrigger>
             <TabsTrigger
               value="carbon"
-              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10"
+              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10 data-[state=inactive]:shadow-sm"
             >
               <Zap className="mr-2 h-5 w-5" /> Carbon Footprint
             </TabsTrigger>
             <TabsTrigger
               value="electricity"
-              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10"
+              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10 data-[state=inactive]:shadow-sm"
             >
               <Bolt className="mr-2 h-5 w-5" /> Electricity Saving
             </TabsTrigger>

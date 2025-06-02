@@ -16,7 +16,7 @@
     --secondary: 145 44% 80%; /* #B3E0C7 (Lighter Accent Green) */
     --secondary-foreground: 145 50% 25%; /* #2F6546 (Dark Green for text on secondary) */
     --muted: 208 100% 94%; /* #E1F5FE (Lighter than background) */
-    --muted-foreground: 210 25% 55%; /* #7C8A99 (Softer blue-gray) */
+    --muted-foreground: 210 30% 50%; /* #6B7F94 (Slightly darker, more contrasty Softer blue-gray) */
     --accent: 145 44% 73%; /* #A0D6B4 (Light green) */
     --accent-foreground: 145 50% 25%; /* #2F6546 (Dark Green for text on accent) */
     --destructive: 0 72% 51%; /* Vivid Red */
@@ -56,7 +56,7 @@
     --secondary: 145 44% 73%; /* #A0D6B4 (Light green - pops on dark) */
     --secondary-foreground: 145 50% 15%; /* #1D4231 (Very dark green) */
     --muted: 210 30% 25%; /* #303E50 (Muted dark blue) */
-    --muted-foreground: 208 50% 70%; /* #8CBADC (Lighter muted text) */
+    --muted-foreground: 208 70% 80%; /* #A3C6E3 (Lighter, more contrasty muted text) */
     --accent: 145 44% 73%; /* #A0D6B4 (Light green) */
     --accent-foreground: 145 50% 15%; /* #1D4231 (Very dark green) */
     --destructive: 0 65% 55%; /* #DB4646 (Vivid Red) */
