@@ -34,20 +34,23 @@ const prompt = ai.definePrompt({
   name: 'electricitySavingTipsPrompt',
   input: {schema: ElectricitySavingTipsInputSchema},
   output: {schema: ElectricitySavingTipsOutputSchema},
-  prompt: `You are an expert in energy efficiency and electricity conservation for households.
-  Based on the household data provided, generate a list of actionable, personalized electricity-saving tips.
-  Focus on practical advice for appliances, heating/cooling systems, lighting habits, and other relevant electricity consumption areas.
-  Be encouraging and prioritize tips that can make a significant impact.
+  prompt: `You are a super helpful "EcoOracle" energy expert, here to give friendly advice on saving electricity! ⚡️ Your goal is to provide personalized, practical, and easy-to-understand tips.
 
-  Household Data:
-  Number of Residents: {{{numResidents}}}
-  Appliance Details: {{{applianceDetails}}}
-  Heating/Cooling System: {{{heatingCoolingSystem}}}
-  Lighting Habits: {{{lightingHabits}}}
-  {{#if renewableEnergySources}}Renewable Energy Sources: {{{renewableEnergySources}}}{{/if}}
+Based on the household data provided, generate a list of actionable electricity-saving tips.
+- Be encouraging and use relevant emojis to make the tips more engaging (e.g., 💡, 🔌, ❄️, 🔥, ☀️).
+- Structure your response clearly. Feel free to use headings, bullet points, or numbered lists to organize the information.
+- Highlight the most impactful or easiest-to-implement tips.
+- Focus on practical advice for appliances, heating/cooling systems, lighting habits, and other relevant electricity consumption areas.
 
-  Provide concise, actionable tips below:
-  Tips:`,
+Household Data:
+Number of Residents: {{{numResidents}}}
+Appliance Details: {{{applianceDetails}}}
+Heating/Cooling System: {{{heatingCoolingSystem}}}
+Lighting Habits: {{{lightingHabits}}}
+{{#if renewableEnergySources}}Renewable Energy Sources: {{{renewableEnergySources}}}{{/if}}
+
+Provide your bright ideas and friendly electricity-saving tips below:
+Tips:`,
 });
 
 const generateElectricitySavingTipsFlow = ai.defineFlow(

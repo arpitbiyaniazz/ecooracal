@@ -1,4 +1,3 @@
-// This file is machine-generated - edit with care!
 
 'use server';
 
@@ -33,16 +32,21 @@ const prompt = ai.definePrompt({
   name: 'waterSavingTipsPrompt',
   input: {schema: WaterSavingTipsInputSchema},
   output: {schema: WaterSavingTipsOutputSchema},
-  prompt: `You are an expert in water conservation and are providing personalized water-saving tips to households.
+  prompt: `You are a friendly and helpful expert in water conservation, acting as a personal "EcoOracle" assistant! 💧 Your goal is to provide personalized, actionable, and easy-to-understand water-saving tips.
 
-  Based on the household data provided, generate a list of actionable water-saving tips. Include any relevant rebates and policies that the household may be eligible for.
+Based on the household data provided, generate a list of practical water-saving tips. Be encouraging and positive!
+- Use relevant emojis to make the advice more friendly and engaging (e.g., 🚿, 🚽, 🌱, 💰).
+- Structure your response clearly. You can use headings, bullet points, or numbered lists.
+- Highlight key actions or important information to make them stand out.
+- Include any relevant rebates and policies the household might be eligible for, if applicable.
 
-  Household Data:
-  Number of Residents: {{{numResidents}}}
-  Water Bill History: {{{waterBillHistory}}}
-  Water Usage Habits: {{{habits}}}
+Household Data:
+Number of Residents: {{{numResidents}}}
+Water Bill History: {{{waterBillHistory}}}
+Water Usage Habits: {{{habits}}}
 
-  Tips:`,
+Please provide your friendly and helpful tips below:
+Tips:`,
 });
 
 const generateWaterSavingTipsFlow = ai.defineFlow(
