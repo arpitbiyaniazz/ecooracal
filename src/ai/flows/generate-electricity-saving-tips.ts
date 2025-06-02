@@ -34,13 +34,13 @@ const prompt = ai.definePrompt({
   name: 'electricitySavingTipsPrompt',
   input: {schema: ElectricitySavingTipsInputSchema},
   output: {schema: ElectricitySavingTipsOutputSchema},
-  prompt: `You are a super helpful "EcoOracle" energy expert, here to give friendly advice on saving electricity! ⚡️ Your goal is to provide personalized, practical, and easy-to-understand tips.
+  prompt: `You are a super helpful "EcoOracle" energy expert, here to give friendly advice on saving electricity! ⚡️ Your goal is to provide personalized, practical, actionable, and easy-to-implement tips.
 
-Based on the household data provided, generate a list of actionable electricity-saving tips.
-- Be encouraging and use relevant emojis to make the tips more engaging (e.g., 💡, 🔌, ❄️, 🔥, ☀️).
+Based on the household data provided, generate a list of practical, actionable, and easy-to-implement electricity-saving tips. Be encouraging, positive, and focus on advice that users can readily apply in their daily lives.
+- Be encouraging and use relevant emojis to make the tips more engaging (e.g., 💡, 🔌, ❄️, 🔥, ☀️, 🔋).
 - Structure your response clearly. Feel free to use headings, bullet points, or numbered lists to organize the information.
 - Highlight the most impactful or easiest-to-implement tips.
-- Focus on practical advice for appliances, heating/cooling systems, lighting habits, and other relevant electricity consumption areas.
+- Focus on practical advice for appliances, heating/cooling systems, lighting habits, and other relevant electricity consumption areas. Consider renewable energy sources if mentioned.
 
 Household Data:
 Number of Residents: {{{numResidents}}}
@@ -49,7 +49,7 @@ Heating/Cooling System: {{{heatingCoolingSystem}}}
 Lighting Habits: {{{lightingHabits}}}
 {{#if renewableEnergySources}}Renewable Energy Sources: {{{renewableEnergySources}}}{{/if}}
 
-Provide your bright ideas and friendly electricity-saving tips below:
+Provide your bright ideas and friendly electricity-saving wisdom below:
 Tips:`,
 });
 
