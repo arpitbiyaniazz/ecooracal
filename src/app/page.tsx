@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background">
       <AppHeader />
       <main className="container mx-auto px-4 py-8 flex-grow">
         <section className="text-center mb-10 md:mb-16">
@@ -24,10 +24,10 @@ export default function Home() {
         </section>
 
         <Tabs defaultValue="water" className="w-full max-w-4xl mx-auto mb-16 md:mb-24">
-          <TabsList className="grid w-full grid-cols-3 mb-8 bg-neutral-900 p-1.5 rounded-lg shadow-lg">
+          <TabsList className="grid w-full grid-cols-3 mb-8 bg-card p-1.5 rounded-lg shadow-lg">
             <TabsTrigger
               value="water"
-              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-neutral-400 data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-neutral-100 data-[state=inactive]:hover:border-primary/40"
+              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-muted-foreground data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-primary data-[state=inactive]:hover:border-primary/40"
             >
               <Droplet className="h-5 w-5 shrink-0" />
               <span className="mx-1">Water Conservation</span>
@@ -35,7 +35,7 @@ export default function Home() {
             </TabsTrigger>
             <TabsTrigger
               value="carbon"
-              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-neutral-400 data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-neutral-100 data-[state=inactive]:hover:border-primary/40"
+              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-muted-foreground data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-primary data-[state=inactive]:hover:border-primary/40"
             >
               <Zap className="h-5 w-5 shrink-0" />
               <span className="mx-1">Carbon Footprint</span>
@@ -43,7 +43,7 @@ export default function Home() {
             </TabsTrigger>
             <TabsTrigger
               value="electricity"
-              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-neutral-400 data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-neutral-100 data-[state=inactive]:hover:border-primary/40"
+              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-muted-foreground data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-primary data-[state=inactive]:hover:border-primary/40"
             >
               <Bolt className="h-5 w-5 shrink-0" />
               <span className="mx-1">Electricity Saving</span>
