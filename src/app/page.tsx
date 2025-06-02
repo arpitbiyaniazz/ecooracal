@@ -1,10 +1,10 @@
 
-import { BarChart, Droplet, Zap, Bolt } from 'lucide-react'; // Added Bolt
+import { BarChart, Droplet, Zap, Bolt } from 'lucide-react';
 import AppHeader from '@/components/layout/app-header';
 import AppFooter from '@/components/layout/app-footer';
 import { HouseholdDataForm } from '@/components/aqua-wise/household-data-form';
 import { CarbonDataForm } from '@/components/carbon-couch/carbon-data-form';
-import { ElectricityDataForm } from '@/components/electricity-coach/electricity-data-form'; // Added ElectricityDataForm
+import { ElectricityDataForm } from '@/components/electricity-coach/electricity-data-form';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -29,19 +29,25 @@ export default function Home() {
               value="water"
               className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10 data-[state=inactive]:shadow-sm"
             >
-              <Droplet className="mr-2 h-5 w-5" /> Water Conservation
+              <Droplet className="h-5 w-5 shrink-0" />
+              <span className="mx-1">Water Conservation</span>
+              <div className="h-5 w-5 shrink-0 invisible" />
             </TabsTrigger>
             <TabsTrigger
               value="carbon"
               className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10 data-[state=inactive]:shadow-sm"
             >
-              <Zap className="mr-2 h-5 w-5" /> Carbon Footprint
+              <Zap className="h-5 w-5 shrink-0" />
+              <span className="mx-1">Carbon Footprint</span>
+              <div className="h-5 w-5 shrink-0 invisible" />
             </TabsTrigger>
             <TabsTrigger
               value="electricity"
               className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:bg-primary/10 data-[state=inactive]:shadow-sm"
             >
-              <Bolt className="mr-2 h-5 w-5" /> Electricity Saving
+              <Bolt className="h-5 w-5 shrink-0" />
+              <span className="mx-1">Electricity Saving</span>
+              <div className="h-5 w-5 shrink-0 invisible" />
             </TabsTrigger>
           </TabsList>
           <TabsContent value="water">
