@@ -27,7 +27,7 @@ export default function Home() {
           <TabsList className="grid w-full grid-cols-3 mb-8 bg-neutral-900 p-1.5 rounded-lg shadow-lg">
             <TabsTrigger
               value="water"
-              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-neutral-300 data-[state=inactive]:hover:bg-neutral-700 data-[state=inactive]:shadow-sm"
+              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-neutral-400 data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-neutral-100 data-[state=inactive]:hover:border-primary/40"
             >
               <Droplet className="h-5 w-5 shrink-0" />
               <span className="mx-1">Water Conservation</span>
@@ -35,7 +35,7 @@ export default function Home() {
             </TabsTrigger>
             <TabsTrigger
               value="carbon"
-              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-neutral-300 data-[state=inactive]:hover:bg-neutral-700 data-[state=inactive]:shadow-sm"
+              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-neutral-400 data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-neutral-100 data-[state=inactive]:hover:border-primary/40"
             >
               <Zap className="h-5 w-5 shrink-0" />
               <span className="mx-1">Carbon Footprint</span>
@@ -43,7 +43,7 @@ export default function Home() {
             </TabsTrigger>
             <TabsTrigger
               value="electricity"
-              className="py-3 text-lg md:text-xl font-headline rounded-md transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=inactive]:text-neutral-300 data-[state=inactive]:hover:bg-neutral-700 data-[state=inactive]:shadow-sm"
+              className="flex items-center justify-center py-3 text-lg md:text-xl font-headline border-b-4 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=active]:text-primary data-[state=active]:border-primary data-[state=inactive]:text-neutral-400 data-[state=inactive]:border-transparent data-[state=inactive]:hover:text-neutral-100 data-[state=inactive]:hover:border-primary/40"
             >
               <Bolt className="h-5 w-5 shrink-0" />
               <span className="mx-1">Electricity Saving</span>
