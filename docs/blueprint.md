@@ -1,9 +1,9 @@
-# **App Name**: AquaWise
+# **App Name**: EcoOracal
 
 ## Core Features:
 
 - Household Data Input: Onboarding: Collect household-specific data (number of residents, water bill history, habits).
-- AI Recommendations: LLM-powered Recommendations: Receive customized water-saving actions based on your inputs. The tool uses LLM reasoning to include rebates and policies where appropriate.
+- AI Recommendations: LLM-powered Recommendations: Receive customized saving actions based on your inputs. The tool uses LLM reasoning to include rebates and policies where appropriate.
 - Progress Tracking: Goal Setting: Set water reduction goals (e.g., 10% reduction in 2 months).
 - Progress Chart: Recommendation Display: Show progress in a clear chart format.
 
