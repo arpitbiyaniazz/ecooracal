@@ -15,30 +15,7 @@
 
 ---
 
-## 📁 Project Structure
-
-ecooracal/
-│
-├── src/ # Main application source code
-│ └── app/ # Pages and route handlers (App Router)
-│ └── page.tsx # Homepage entry point
-│
-├── tailwind.config.ts # Tailwind theme customization
-├── next.config.ts # Next.js configuration
-├── apphosting.yaml # Firebase Hosting configuration
-├── components.json # Firebase Studio component definitions
-├── package.json # NPM project metadata and dependencies
-└── .vscode/ # Editor settings for VS Code
-
-yaml
-Copy
-Edit
-
----
-
-## 📦 Getting Started
-
-### 1. Clone the Repo
+### Clone the Repo
 
 ```bash
 git clone https://github.com/arpitbiyaniazz/ecooracal.git
