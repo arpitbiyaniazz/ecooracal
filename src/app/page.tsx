@@ -18,10 +18,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-// Define a type for the view keys
 type ViewType = 'water' | 'carbon' | 'electricity' | 'esg';
 
-// Helper object to store details for each view
 const views = {
   water: {
     label: "Water Conservation",
