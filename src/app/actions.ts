@@ -4,6 +4,7 @@
 import { generateWaterSavingTips, type WaterSavingTipsInput, type WaterSavingTipsOutput } from '@/ai/flows/generate-water-saving-tips';
 import { generateCarbonFootprintTips, type CarbonFootprintTipsInput, type CarbonFootprintTipsOutput } from '@/ai/flows/generate-carbon-footprint-tips';
 import { generateElectricitySavingTips, type ElectricitySavingTipsInput, type ElectricitySavingTipsOutput } from '@/ai/flows/generate-electricity-saving-tips';
+import { assessEsgRisk, type EsgRiskInput, type EsgRiskOutput } from '@/ai/flows/assess-esg-risk';
 import { z } from 'zod';
 
 const WaterFormSchema = z.object({
@@ -179,6 +180,62 @@ export async function getElectricityTipsAction(prevState: CommonFormState, formD
         message: `Failed to generate electricity saving tips: ${errorMessage}. Please try again later.`,
         success: false,
         errors: { _form: ["AI service error for electricity tips.", errorMessage] }
+    };
+  }
+}
+
+// ESG Risk Assessment Action
+const EsgRiskFormSchema = z.object({
+  reportText: z.string().min(100, "Report text must be at least 100 characters.").max(50000, "Report text cannot exceed 50,000 characters."),
+});
+
+export interface EsgRiskFormState {
+  message: string;
+  assessment?: EsgRiskOutput;
+  success?: boolean;
+  errors?: {
+    reportText?: string[];
+    _form?: string[];
+  };
+}
+
+export async function getEsgRiskAssessmentAction(prevState: EsgRiskFormState, formData: FormData): Promise<EsgRiskFormState> {
+  const validatedFields = EsgRiskFormSchema.safeParse({
+    reportText: formData.get('reportText'),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      message: "Validation failed. Please check your inputs.",
+      success: false,
+      errors: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+
+  try {
+    const input: EsgRiskInput = validatedFields.data;
+    const result: EsgRiskOutput = await assessEsgRisk(input);
+    
+    if (!result || !result.overallSummary) {
+        return { 
+            message: "AI service returned an empty assessment. Please try adjusting your input or try again later.",
+            success: false,
+            errors: { _form: ["AI returned no assessment."] }
+        };
+    }
+
+    return { 
+        message: "Successfully generated ESG Risk Assessment!", 
+        assessment: result,
+        success: true,
+    };
+  } catch (error) {
+    console.error("Error generating ESG assessment:", error);
+    const errorMessage = (error instanceof Error) ? error.message : "An unknown error occurred.";
+    return { 
+        message: `Failed to generate ESG assessment: ${errorMessage}. Please try again later.`,
+        success: false,
+        errors: { _form: ["AI service error during assessment.", errorMessage] }
     };
   }
 }

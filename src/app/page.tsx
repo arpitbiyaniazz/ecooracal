@@ -1,12 +1,14 @@
+
 'use client';
 
 import { useState } from 'react';
-import { BarChart, Droplet, Zap, Bolt, ChevronDown } from 'lucide-react';
+import { BarChart, Droplet, Zap, Bolt, ChevronDown, FileSearch } from 'lucide-react';
 import AppHeader from '@/components/layout/app-header';
 import AppFooter from '@/components/layout/app-footer';
 import { HouseholdDataForm } from '@/components/aqua-wise/household-data-form';
 import { CarbonDataForm } from '@/components/carbon-couch/carbon-data-form';
 import { ElectricityDataForm } from '@/components/electricity-coach/electricity-data-form';
+import { EsgRiskForm } from '@/components/esg-assessor/esg-risk-form';
 import { Separator } from '@/components/ui/separator';
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +19,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 // Define a type for the view keys
-type ViewType = 'water' | 'carbon' | 'electricity';
+type ViewType = 'water' | 'carbon' | 'electricity' | 'esg';
 
 // Helper object to store details for each view
 const views = {
@@ -44,6 +46,14 @@ const views = {
     description: "Detail your electricity use to receive AI-powered saving strategies.",
     component: ElectricityDataForm,
     titleColor: "text-primary",
+  },
+  esg: {
+    label: "ESG Risk Assessor",
+    icon: FileSearch,
+    title: "ESG Risk Assessment Tool",
+    description: "Paste a corporate report to automatically identify and assess ESG risks.",
+    component: EsgRiskForm,
+    titleColor: "text-secondary-foreground",
   },
 };
 
